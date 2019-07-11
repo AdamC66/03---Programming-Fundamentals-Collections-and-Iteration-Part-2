@@ -34,3 +34,40 @@ grocery_list.remove("salmon")
 display_list(grocery_list)
 
 # After you're done, be sure you have everything committed and pushed to your github repo.
+
+print("\n\n\n")
+# Exercise 10
+# Start out by creating the following dictionary representing the number of students in past Bitmaker cohorts:
+
+students = {
+  'cohort1': 34,
+  'cohort2': 42,
+  'cohort3': 22
+}
+
+# Create a method that displays the name and number of students for each cohort, like so:
+
+def display_cohorts(students):
+    for name,size in students.items():
+        print(f"{name}: {size} students")
+    print("")
+display_cohorts(students)
+# Add cohort 4, which had 43 students, to the dictionary.
+students['cohort4'] =43
+display_cohorts(students)
+# Use the keys method to output all of the cohort names.
+print(students.keys())
+# The classrooms have been expanded! Increase each cohort size by 5% and display the new results.
+
+for name, size in students.items():
+    students[name] = int(size*1.05) #made this an int after multiplying because you cant have a fraction of a student
+display_cohorts(students)
+# Delete the 2nd cohort and redisplay the dictionary.
+del students["cohort2"]
+display_cohorts(students)
+
+# BONUS: Calculate the total number of students across all cohorts using a for loop. Output the result.
+totalstudents = 0
+for name, size in students.items():
+    totalstudents += size
+print(totalstudents)
